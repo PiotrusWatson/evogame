@@ -1,3 +1,5 @@
+from species import Species
+
 #Placeholder
 def show_map(void):
 	print("showin map")
@@ -27,10 +29,10 @@ def list_mutations(available):
 		print("showing all mutations")
 
 def my_species(void):
-	print("printing stats")
+	print(fox.toString())
 
 def error(void):
-	print("i do not understand. Commands are: ")
+	print("I do not understand. Commands are: ")
 	for command in command_to_function:
 		print(command)
 
@@ -46,6 +48,7 @@ command_to_function = {"map": show_map,
 }
 
 def main():
+	init()
 	print("Welcome to evogame! What do you want to do?")
 	while (True):
 	    entered_text = input("Enter a command: ")
@@ -58,8 +61,9 @@ def main():
 
 	    command_to_function.get(command, error)(argument)
 	    
-
-
+def init():
+	global fox
+	fox = Species("Fox")
 
 
 
