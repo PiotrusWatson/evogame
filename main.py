@@ -1,4 +1,4 @@
-from species import Species
+
 
 #Placeholder
 def show_map(void):
