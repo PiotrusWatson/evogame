@@ -1,3 +1,8 @@
+from gamestate import GameState
+
+
+gamestate = GameState()
+player = gamestate.get_arbitrary_player()
 
 
 #Placeholder
@@ -28,8 +33,8 @@ def list_mutations(available):
 	else:
 		print("showing all mutations")
 
-def my_species(void):
-	print(fox.toString())
+def my_mutants(void):
+	print("im printing my mutants")
 
 def error(void):
 	print("I do not understand. Commands are: ")
@@ -44,11 +49,10 @@ command_to_function = {"map": show_map,
 "end_turn": end_turn, 
 "mutate": mutate,
 "mutations": list_mutations,
-"my_species": my_species,
+"my_mutants": my_mutants,
 }
 
 def main():
-	init()
 	print("Welcome to evogame! What do you want to do?")
 	while (True):
 	    entered_text = input("Enter a command: ")
@@ -61,9 +65,7 @@ def main():
 
 	    command_to_function.get(command, error)(argument)
 	    
-def init():
-	global fox
-	fox = Species("Fox")
+
 
 
 
